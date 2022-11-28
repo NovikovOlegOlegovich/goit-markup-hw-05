@@ -48,7 +48,7 @@ body {
   padding-top: 94px;
   padding-bottom: 94px;
 }
-/* ФУТЕР */
+/* ХЕДЕР */
 
 /* Логотипы футер/хедер */
 
@@ -109,6 +109,8 @@ body {
 }
 
 .site-nav .link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -121,7 +123,23 @@ body {
 }
 
 .site-nav .active {
+  position: relative;
+
   color: var(--accent-color);
+}
+
+.active::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
 }
 
 /* Контакты */
@@ -136,6 +154,8 @@ body {
 }
 
 .main-contacts .contacts {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   display: inline-flex;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -304,13 +324,38 @@ body {
   display: flex;
 }
 
-.work-target-list .title:not(:last-child) {
+.work-target-item:not(:last-child) {
   margin-right: 30px;
 }
 
-.work-target-title {
+.work-target-item {
+  position: relative;
   margin-top: 0;
-  margin-bottom: 50px;
+  margin-bottom: 0;
+  height: 294px;
+}
+
+.description-container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 70px;
+
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.work-target-description {
+  text-align: center;
+  margin-top: 27px;
+  margin-bottom: 27px;
+
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--white-color);
 }
 
 /* Секция-"Наша команда" */
@@ -378,6 +423,9 @@ body {
 }
 
 .team-soc-link {
+ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
   display: flex;
   width: 100%;
   height: 100%;
@@ -439,6 +487,8 @@ body {
 }
 
 .clients-link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   display: flex;
   border: 1px solid #afb1b8;
   border-radius: 4px;
@@ -497,6 +547,10 @@ body {
   color: rgba(255, 255, 255, 0.6);
 }
 
+.location, .mail, .tel{
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .location:hover,
 .mail:hover,
 .tel:hover,
@@ -545,6 +599,8 @@ body {
 }
 
 .footer-soc-link {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   display: flex;
   width: 100%;
   height: 100%;
@@ -557,11 +613,60 @@ body {
 
 .footer-soc-link:hover {
   background-color: #2196f3;
-  color: #ffffff;
 }
 
 .footer-soc-icon {
   fill: currentColor;
+}
+
+/* Модальное окно */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0, 0, 0, 0.2);;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+
+  border-radius: 4px;
+  
+  background-color:var(--white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.modal-button-close {
+  display: flex;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  
+  background-color: var(--white-color);
+  fill: #000000;
 }
 
 /* Сторінка portfolio.html */
@@ -581,6 +686,9 @@ body {
 }
 
 .nav-button {
+ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+
+
   display: inline-block;
   padding: 6px 22px;
   border-radius: 4px;
@@ -609,6 +717,8 @@ body {
 }
 
 .portfolio-block {
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+
   width: calc((100% - 60px) / 3);
   background: var(--white-color);
 }
@@ -657,4 +767,35 @@ body {
   margin-top: 0;
   margin-bottom: 20px;
   margin-left: 24px;
+}
+
+.container-portfolio-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-img-description {
+  position: absolute;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 63px 24px;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);;
+}
+
+.portfolio-img-description p{
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+
+  color: var(--white-color);
+}
+
+.portfolio-block:hover .portfolio-img-description,
+.portfolio-block:focus .portfolio-img-description {
+  transform: translateY(-100%);
 }
