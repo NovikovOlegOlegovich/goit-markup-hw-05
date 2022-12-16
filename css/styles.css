@@ -619,6 +619,68 @@ body {
   fill: currentColor;
 }
 
+.footer-position {
+  display: flex;
+}
+
+.sing {
+  margin-left: 93px;
+}
+
+.sign-title{
+  margin-top: 8px;
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.16;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+}
+
+.sign-input {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: transparent;
+  box-sizing: inherit;
+  min-width: 356px;
+  min-height: 48px;
+  padding: 16px 15px;
+}
+
+.sign-form {
+  position: relative;
+  display: flex;
+}
+
+.sign-button {
+  margin-left: 12px;
+  min-width: 200px;
+  min-height: 50px;
+  background-color: var(--accent-color);
+  border: 4px solid transparent;
+  border-radius: 4px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  padding-left: 28px;
+
+  letter-spacing: 0.06em;
+
+  color: #FFFFFF;
+
+  display: flex;
+  align-items: center;
+}
+
+.sign-icon {
+  margin-left: 10px;
+}
+
 /* Модальное окно */
 
 .backdrop {
@@ -629,7 +691,8 @@ body {
   height: 100%;
 
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   background-color:rgba(0, 0, 0, 0.2);;
 }
@@ -651,7 +714,8 @@ body {
 
   width: 528px;
   height: 581px;
-  padding: 15px 30px;
+  padding: 40px 40px;
+ 
 
   border-radius: 4px;
   
@@ -663,10 +727,107 @@ body {
   transition:  transform 250ms cubic-bezier(0.4, 0, 0.2, 1),box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-top: 0;
+  margin-bottom: 12px;
+
+  color: #212121;
+}
+
 .modal p{
   margin: 0;
 }
 
+.form-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-field input {
+  padding: 15px 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  height: 40px;
+}
+
+.form-field label {
+  margin-bottom: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  color: #757575;
+}
+
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+
+  transform: translateY(0, -50%);
+}
+
+.form-field textarea {
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  min-width: 448px;
+  min-height: 120px;
+}
+
+.form-field textarea::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.textarea {
+  margin-bottom: 10px;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.form-checkbox [type="checkbox"] {
+  margin-right: 8px;
+}
+
+
+.form-button {
+  display: block;
+  padding: 10px 52px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 200px;
+
+  background: #2196F3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+
+  
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+
+  letter-spacing: 0.06em;
+
+  color: #FFFFFF;
+
+}
 
 .modal-button-close {
   display: flex;
@@ -685,6 +846,25 @@ body {
   
   background-color: var(--white-color);
   fill: #000000;
+}
+
+.form-checkbox label {
+  display: inline-block;
+  outline: 1px solid black;
+}
+
+.checkbox-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  
+  border: 2px solid black;
+  border-radius: 5px;
+
+}
+
+.checkbox:checked + .checkbox-icon {
+  background-image: ;
 }
 
 /* Сторінка portfolio.html */
